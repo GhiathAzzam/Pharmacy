@@ -12,10 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('favourites', function (Blueprint $table) {
-            $table->integer('pharmacist_id')->unsigned();
-           // $table->foreign('pharmacist_id')->references('pharmacist_id')->on('pharmacists');
-            $table->integer('medicine_id')->unsigned();
-            //$table->foreign('medicine_id')->references('id')->on('medicines');
+            $table->foreignId('pharmacist_id');
+            $table->foreignId('medicine_id');
             $table->timestamps();
         });
     }

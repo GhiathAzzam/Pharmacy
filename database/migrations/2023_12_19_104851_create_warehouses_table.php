@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('warehouses', function (Blueprint $table) {
             $table->id();
-            $table->integer('owner_id')->unsigned(); // Warehouse_ID
-          //  $table->foreign('owner_id')->references('owner_id')->on('warehouse_owner');
+            $table->foreignId('owner_id');
             $table->timestamps();
         });
     }

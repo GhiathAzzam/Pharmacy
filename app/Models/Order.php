@@ -13,7 +13,7 @@ class Order extends Model
         'date_ordered',
         'total_price',
         'status',
-        'payment_status',
+        'payment_status'
     ];
 
     public function warehouse()

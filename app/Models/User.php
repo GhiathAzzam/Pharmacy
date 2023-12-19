@@ -44,8 +44,8 @@ class User extends Authenticatable
     ];
 
 
-    public function warehouse_owner(){
-        return $this->hasOne(Warehouse_Owner::class);
+    public function WarehouseOwner(){
+        return $this->hasOne(WarehouseOwner::class);
     }
     public function pharmacist()
     {

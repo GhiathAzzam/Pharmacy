@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Warehouse_Owner extends Model
+class WarehouseOwner extends Model
 {
     use HasFactory;
+//    protected $table = 'warehouse_owners';
 
-    protected $fillable=[];
+    protected $fillable=['user_id',];
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -21,3 +22,6 @@ class Warehouse_Owner extends Model
 
     }
 }
+
+
+

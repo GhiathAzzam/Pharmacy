@@ -12,10 +12,9 @@ return new class extends Migration {
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id(); // ID
-            $table->integer('warehouse_id')->unsigned(); // Warehouse_ID
-          //  $table->foreign('warehouse_id')->references('id')->on('warehouses');
-            $table->integer('pharmacist_id')->unsigned(); // Pharmacist_ID
-        //    $table->foreign('pharmacist_id')->references('pharmacist_id')->on('pharmacists');
+            $table->foreignId('warehouse_id'); // Warehouse_ID
+            $table->foreignId('pharmacist_id'); // Pharmacist_ID
+
             $table->dateTime('date_ordered'); // Date_Ordered
             $table->decimal('total_price', 10, 2); // Total_Price
             $table->string('status', 255); // Status

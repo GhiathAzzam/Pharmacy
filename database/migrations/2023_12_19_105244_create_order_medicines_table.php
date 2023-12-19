@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('order__medicines', function (Blueprint $table) {
-            $table->integer('order_id')->unsigned();
-        //    $table->foreign('order_id')->references('id')->on('orders');
-            $table->integer('medicine_id')->unsigned();
-          //  $table->foreign('medicine_id')->references('id')->on('medicines');
+        Schema::create('order_medicines', function (Blueprint $table) {
+            $table->foreignId('order_id');
+            $table->foreignId('medicine_id')->unsigned();
             $table->integer('quantity');
             $table->timestamps();
         });
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('order__medicines');
+        Schema::dropIfExists('order_medicines');
     }
 };
