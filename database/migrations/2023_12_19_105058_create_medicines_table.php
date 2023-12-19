@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('medicines', function (Blueprint $table) {
                 $table->id(); // ID
-                $table->bigInteger('category_id')->unsigned(); // Category_ID
+                $table->integer('category_id')->unsigned(); // Category_ID
                 $table->foreign('category_id')->references('id')->on('categories');
-                $table->bigInteger('warehouse_id')->unsigned(); // Warehouse_ID
+                $table->integer('warehouse_id')->unsigned(); // Warehouse_ID
                 $table->foreign('warehouse_id')->references('id')->on('warehouses');
                 $table->string('scientific_name', 30); // Scientefic_Name
                 $table->string('commercial_name', 30); // Commercial_Name

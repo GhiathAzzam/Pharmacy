@@ -13,6 +13,7 @@ class Category extends Model
         ];
     public function medicine(){
         return $this->hasMany(Medicine::class);
+
     }
 
 }

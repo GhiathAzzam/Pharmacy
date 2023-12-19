@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Warehouse_Owner extends Model
 {
     use HasFactory;
+
+    protected $fillable=[];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+
+    }
+    public function warehouse()
+    {
+        return $this->hasOne(Warehouse::class);
+
+    }
 }

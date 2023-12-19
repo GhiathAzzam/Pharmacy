@@ -10,8 +10,6 @@ class Medicine extends Model
     use HasFactory;
 
     protected $fillable = [
-        'category_id',
-        'warehouse_id',
         'scientific_name',
         'commercial_name',
         'company',
@@ -25,5 +23,17 @@ class Medicine extends Model
     {
         return $this->belongsTo(Category::class);
     }
+   public function warehouse()
+   {
+       return $this->belongsTo(Warehouse::class);
+   }
+   public function favourite()
+   {
+       return $this->hasMany(Favourite::class);
+   }
+       public function order_medcinie()
+   {
+       return $this->hasMany(Order_Medicine::class);
+   }
 
 }

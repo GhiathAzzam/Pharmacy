@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('warehouse_owners', function (Blueprint $table) {
-            $table->id('owner_id');
+            $table->id('owner_id')->unsigned(); // Warehouse_ID
+            $table->foreign('owner_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

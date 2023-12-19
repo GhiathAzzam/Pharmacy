@@ -10,8 +10,6 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-        'warehouse_id',
-        'pharmacist_id',
         'date_ordered',
         'total_price',
         'status',
@@ -26,5 +24,8 @@ class Order extends Model
     public function pharmacist()
     {
         return $this->belongsTo(Pharmacist::class);
+    }
+    public function order_medicine(){
+        return $this->hasMany(Order_Medicine::class);
     }
 }

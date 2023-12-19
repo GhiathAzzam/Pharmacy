@@ -42,4 +42,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function warehouse_owner(){
+        return $this->hasOne(Warehouse_Owner::class);
+    }
+    public function pharmacist()
+    {
+        return $this->hasOne(Pharmacist::class);
+    }
+
 }

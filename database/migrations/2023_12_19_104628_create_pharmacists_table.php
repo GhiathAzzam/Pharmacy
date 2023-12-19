@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pharmacists', function (Blueprint $table) {
-            $table->id('pharmacist_id');
+
+            $table->id('pharmacist_id')->unsigned();
+            $table->foreign('pharmacist_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
